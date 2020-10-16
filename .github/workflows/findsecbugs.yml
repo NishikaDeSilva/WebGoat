@@ -37,4 +37,7 @@ jobs:
           mvn clean install -DskipTests
           cd webgoat-lessons/insecure-deserialization
           mvn spotbugs:spotbugs
-          ls target
+      # push results as check run annotations
+      - uses: jwgmeligmeyling/spotbugs-github-action@master
+        with:
+          path: 'target/spotbugsXml.xml'    
