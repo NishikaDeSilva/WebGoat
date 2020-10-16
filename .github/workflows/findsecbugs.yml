@@ -23,6 +23,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      # caching dependencies to improve execution time
+      - name: Cache local Maven repository
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
       # Runs a single command using the runners shell
       - name: Build
         run: |
