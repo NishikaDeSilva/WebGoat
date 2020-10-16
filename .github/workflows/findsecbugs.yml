@@ -40,4 +40,4 @@ jobs:
       # push results as check run annotations
       - uses: jwgmeligmeyling/spotbugs-github-action@master
         with:
-          path: 'target/spotbugsXml.xml'    
+          path: '/home/runner/work/WebGoat/WebGoat/webgoat-lessons/insecure-deserialization/target/spotbugsXml.xml'    
